@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Video Site{% endblock %}</title>
+</head>
+<body>
+    <header>
+        <h1>My Video Site</h1>
+        <nav>
+            <a href="{% url 'video_list' %}">Video List</a> |
+            <a href="{% url 'add_video' %}">Add Video</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Video Sharing Site</p>
+    </footer>
+</body>
+</html>

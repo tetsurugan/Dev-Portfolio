@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <h2>Expense List</h2>
+
+  <p><strong>Total Expenses:</strong> ${{ total_expenses }}</p>
+
+  <ul>
+    {% for expense in expenses %}
+      <li>
+        {{ expense.date }} - {{ expense.name }}: ${{ expense.amount }} ({{ expense.category }})
+        <form action="{% url 'delete_expense' expense.id %}" method="post" style="display:inline;">
+          {% csrf_token %}
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {% empty %}
+      <p>No expenses added yet.</p>
+    {% endfor %}
+  </ul>
+
+  <a href="{% url 'add_expense' %}">
+    <button>Add New Expense</button>
+  </a>
+
+{% endblock %}

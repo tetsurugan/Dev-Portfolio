@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    {% load static %}  <!-- ✅ Load the static tag at the top -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}My Video Site{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">  <!-- ✅ Now this will work -->
+</head>
+<body>
+    <header>
+        <h1><a href="{% url 'task_list' %}">Todo List</a></h1>
+<nav>
+    <a href="{% url 'add_task' %}">Add Task</a>
+    <a href="{% url 'task_list' %}">Task List</a>
+</nav>
+        </nav>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>

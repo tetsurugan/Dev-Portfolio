@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h2>To-Do List</h2>
+    <a href="{% url 'add_task' %}">Add New Task</a>
+    
+    <h3>Pending Tasks</h3>
+    <ul>
+        {% for task in tasks %}
+            <li>
+                {{ task.title }} - Due: {{ task.due_date }}
+                <a href="{% url 'edit_task' task.id %}">Edit</a> |
+                <a href="{% url 'delete_task' task.id %}">Delete</a>
+            </li>
+        {% empty %}
+            <p>No pending tasks.</p>
+        {% endfor %}
+    </ul>
+
+    <h3>Completed Tasks</h3>
+    <ul>
+        {% for task in completed_tasks %}
+            <li>{{ task.title }} (Completed)</li>
+        {% empty %}
+            <p>No completed tasks.</p>
+        {% endfor %}
+    </ul>
+{% endblock %}

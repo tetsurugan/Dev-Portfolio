@@ -1,0 +1,5 @@
+asgiref==3.8.1
+Django==5.1.6
+djangorestframework==3.15.2
+-e git+https://github.com/MalcolmXRocket/Next-Chapter-Website.git@5d18703ed9fbf51ad7db0d36f46ecb34de7744fe#egg=expense_tracker&subdirectory=Coding Practice folder/2025/Feb/PracticeDocuments/Cheat_Sheets/Projects/Full_Projects/expenseTracker/expense_tracker
+sqlparse==0.5.3
